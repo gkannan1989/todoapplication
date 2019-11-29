@@ -35,7 +35,7 @@ ATOMIC design
   src/components/TodoListItem.js
 ````
 
-### Template
+### Organisms
 ````
   src/components/Layout.js
 ````
