@@ -1,0 +1,191 @@
+html,
+body { 
+  font-family: 'Darwin-Light !important'; 
+  margin: 0px ; 
+  height: 100%;
+  padding: 0px;
+}   
+#root {
+  height: 100%;
+}
+@font-face {font-family: "Darwin-Bold";
+  src: url("../assets/fonts/eot/Darwin-Bold.eot"); /* IE9*/
+  src: url("../assets/fonts/eot/Darwin-Bold.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("../assets/fonts/woff2/Darwin-Bold.woff2") format("woff2"), /* chrome firefox */
+  url("../assets/fonts/woff/Darwin-Bold.woff") format("woff"), /* chrome firefox */
+  url("../assets/fonts/ttf/Darwin-Bold.ttf") format("truetype"), /* chrome firefox opera Safari, Android, iOS 4.2+*/
+  url("../assets/fonts/svg/Darwin-Bold.svg#Darwin-Bold") format("svg"); /* iOS 4.1- */
+}  
+@font-face {font-family: "Darwin-Light";
+  src: url("../assets/fonts/eot/Darwin-Light.eot"); /* IE9*/
+  src: url("../assets/fonts/eot/Darwin-Light.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("../assets/fonts/woff2/Darwin-Light.woff2") format("woff2"), /* chrome firefox */
+  url("../assets/fonts/woff/Darwin-Light.woff") format("woff"), /* chrome firefox */
+  url("../assets/fonts/ttf/Darwin-Light.ttf") format("truetype"), /* chrome firefox opera Safari, Android, iOS 4.2+*/
+  url("../assets/fonts/svg/Darwin-Light.svg#Darwin-Light") format("svg"); /* iOS 4.1- */
+}  
+@font-face {font-family: "Fira-Sans-ExtraLight";
+  src: url("../assets/fonts/ttf/fira-sans.extralight.ttf"); 
+}  
+
+.strikeThrough {
+  text-decoration: line-through;
+  color: #999;
+}
+.greenCheckBox {
+  margin-right: 0px !important;
+} 
+.MuiFab-root {
+  height: .5em !important;
+  width: 2.5em !important;
+}
+.MuiGridListTileBar-rootSubtitle {
+  height: 100% !important;
+  background: transparent !important;
+}
+.MuiGridListTileBar-title {
+  font-size: 2.4em !important;
+  line-height: 2 !important;
+  font-family: 'Fira-Sans-ExtraLight'; 
+}
+.MuiGridListTileBar-subtitle {
+  font-size: 1rem !important;
+}
+.MuiGridListTileBar-titleWrap {
+  font-family: "Darwin-Light" !important; 
+}
+.MuiButton-label {
+  text-transform: none !important;
+}
+.MuiButton-label {
+  font-size: 1.2em !important;
+} 
+.MuiListItem-divider {
+  border-bottom: 0px !important;
+}
+.MuiListItem-root{
+  padding-top:0px !important;
+  padding-bottom: 0px !important;
+} 
+.MuiPaper-elevation1 {
+  margin:0px !important;
+}
+.MuiTypography-body1{ 
+  font-size: 1.05em !important; 
+} 
+.addToDoBtn {
+  line-height: 4em !important;
+  margin-left: 1em !important; 
+}
+.addToDo {
+  margin: 16px;
+  margin-top: 1em !important; 
+  padding: 16px; 
+}
+.addToDo > div.MuiGrid-container > div.MuiGrid-item {
+  background-color:#ffff
+}
+.grid {
+  padding-right:  16px !important;
+}
+.MuiGridListTile-imgFullWidth {
+  background-repeat: repeat;
+  background-size: cover
+} 
+.listItem {
+  min-height: 3.7em;
+}
+.rightSideBar {
+  min-height: 100%;
+  margin: 16px;
+  box-shadow: none !important;
+  padding-top: 16px;
+  /* padding: 16px;  */
+}
+.userImg {
+  height: 3em;
+  width: 3em;
+}
+.wrapperIcons {
+  background: rgba(0, 0, 0, 0.08) !important;
+  cursor: pointer;
+}
+.MuiGridListTileBar-titleWrap {
+  margin-left: 16px;
+  margin-right: 16px;
+  margin-top: 52px;
+} 
+.addBtn {
+  min-width: auto;
+} 
+.wrapper > .MuiPaper-rounded {
+  height: 100%;
+}
+.wrapper {
+  height: 97%;
+}
+li.MuiGridListTile-root {
+  padding:0px !important
+}
+ul.MuiGridList-root {
+  margin:0px !important
+}
+.MuiButton-outlinedSecondary {
+  color: #3f51b5 !important;
+  border: 1px solid #3f51b5 !important;
+}
+
+.MuiButton-outlinedSecondary:hover {
+  background-color: rgba(0, 0, 0, 0.08) !important;
+} 
+.MuiSnackbarContent-action { 
+  padding-left: 0px !important;
+  width: 41px !important;
+}  
+
+.paperRightSide{
+  padding: 0px;
+  margin : 0px; 
+  background-color: #fafafa;
+}
+.MuiGrid-item {
+  background-color: #f3f3f3
+}
+.MuiGridListTile-tile {
+  background-image: url("../assets/img/todo-background.png");
+  background-size: cover;
+} 
+.MuiIconButton-colorPrimary {
+  color: #0b29d2f7 !important;
+}
+.MuiPaper-elevation1 {
+  box-shadow: 0 0 !important
+}
+.userBlock {
+  box-shadow: 4px 1px 4px 0px rgba(0, 0, 0, 0.03) !important;
+  z-index: 1  !important
+}
+.checkboxOutline path {
+  visibility: hidden; 
+} 
+.MuiListItem-gutters {
+  padding-left: 1.8em !important;
+  padding-right: 1em !important;
+}
+.MuiGrid-container {
+  height: auto;
+}
+@media only screen and (min-width: 600px) {
+  .MuiGrid-container {
+      height: 100%;
+  } 
+}
+@media only screen and (max-width: 600px) { 
+  .rightSideBar {
+    min-height: auto;
+  }
+  .MuiListItem-gutters {
+    padding-left: 1.4em !important;
+    padding-right: 1em !important;
+  }
+}
