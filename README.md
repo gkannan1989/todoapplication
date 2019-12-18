@@ -1,7 +1,7 @@
 # Interactive React Responsive Todo App
 
 This todo app allows user to add new todo, remove todo, mark completed todo, view todos and interactive UI with Material UI, adding to that it also has persistance of the todo list(stored in local storage). 
-
+ 
 ## Tech Stack
 1. React
 2. React hooks (useState, useReducer, useContext and useEffect)
