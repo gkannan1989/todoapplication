@@ -81,7 +81,6 @@ body {
 }
 .addToDo {
   margin: 16px;
-  margin-top: 1em !important; 
   padding: 16px; 
 }
 .addToDo > div.MuiGrid-container > div.MuiGrid-item {
