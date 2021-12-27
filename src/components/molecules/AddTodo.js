@@ -27,11 +27,11 @@ const AddTodo = memo(props => (
   <> 
   {
     !props.isOpen ? 
-      <Typography className='addToDoBtn' color="inherit">
-        <Fab size="small"  color="primary" aria-label="add" onClick={props.openTodo}>
+      <Typography onClick={props.openTodo} className='addToDoBtn' color="inherit">
+        <Fab size="small"  color="primary" aria-label="add">
           <AddIcon />   
         </Fab>
-        <Button color="primary" onClick={props.openTodo}>{C.ADD_TODO_BTN}</Button> 
+        <Button color="primary">{C.ADD_TODO_BTN}</Button> 
       </Typography> : 
          ( <Paper className="addToDo"> 
             <Grid container> 

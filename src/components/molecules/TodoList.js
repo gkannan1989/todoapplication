@@ -20,36 +20,38 @@ import ImageListItemBar from '@material-ui/core/ImageListItemBar';
       banner={bannerObj}
       />
  */
-const TodoList = memo(props => (
-  <>
-   <ImageList rowHeight={180} >
-         <ImageListItem cols={2} rows={1}>
-            <ImageListItemBar
-              title={props.banner && props.banner.title}
-              subtitle={props.banner && props.banner.subTitle}
-              position="bottom" 
-              actionPosition="left" 
-            />
-          </ImageListItem> 
-    </ImageList>  
-    
-    {props.items && props.items.length > 0 && (
-      <Paper style={{ margin: 16 }}>
-        <List style={{ overflow: "none" }}>
-          {props.items.map((todo, idx) => (
-            <TodoListItem
-              {...todo}
-              key={`TodoItem.${idx}`}
-              divider={idx !== props.items.length - 1}
-              onButtonClick={() => props.onItemRemove(idx)}
-              onCheckBoxToggle={() => props.onItemMark(idx)}
-            />
-          ))}
-        </List>
-      </Paper>
-    )}
-  </>
-));
+const TodoList = memo(props => {
+  const items = props.items.sort((a, b) => b.checked > a.checked ? -1 : 1);
+  return (<>
+    <ImageList rowHeight={180} >
+          <ImageListItem cols={2} rows={1}>
+             <ImageListItemBar
+               title={props.banner && props.banner.title}
+               subtitle={props.banner && props.banner.subTitle}
+               position="bottom" 
+               actionPosition="left" 
+             />
+           </ImageListItem> 
+     </ImageList>  
+     
+     {items && items.length > 0 && (
+       <Paper style={{ margin: 16, maxHeight: 400, overflow: 'auto' }}>
+         <List style={{ overflow: "none" }}>
+           {items.map((todo, idx) => (
+             <TodoListItem
+               {...todo}
+               key={`TodoItem.${idx}`}
+               divider={idx !== items.length - 1}
+               onButtonClick={() => props.onItemRemove(idx)}
+               onCheckBoxToggle={() => props.onItemMark(idx)}
+             />
+           ))}
+         </List>
+       </Paper>
+     )}
+   </>
+ )
+});
 /**
  * @memberOf components.TodoList
  * @name propTypes
