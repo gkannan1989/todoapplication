@@ -83,6 +83,9 @@ const TodoApp = memo(() => {
     }
   }
 
+  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+  const today  = new Date();
+  C.BANNER_OBJ.subTitle = today.toLocaleDateString("en-US", options)
   return ( 
     <div className={'wrapper'}>
       <MuiThemeProvider theme={customTheme}> 

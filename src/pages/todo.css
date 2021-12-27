@@ -41,7 +41,6 @@ body {
 }
 .MuiImageListItemBar-rootSubtitle {
   height: 100% !important;
-  background: transparent !important;
 }
 .MuiImageListItemBar-title {
   font-size: 2.4em !important;

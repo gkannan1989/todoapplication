@@ -39,7 +39,7 @@ const Layout = memo(props => (
            <Paper className="rightSideBar"> 
               <Typography> 
                 <Button className={'userIcons'}>
-                  <img className={'userImg'} src={userImg} alt={"userpicture"}/>
+                  {/* <img className={'userImg'} src={userImg} alt={"userpicture"}/> */}
                   &nbsp;{props.user && props.user.name}
                 </Button>
               </Typography>
