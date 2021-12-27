@@ -6,20 +6,8 @@ const Store = React.createContext({
   todos: [
     {
       checked: false,
-      text: "Shortlist features for MVP"
-    },
-    {
-      checked: false,
-      text: "Launch PPC campaign with new creative"
-    },
-    {
-      checked: false,
-      text: "Define audience breakdown with new data"
-    },
-    {
-      checked: false,
-      text: "Launch demo page for SEO analysis"
-    } 
+      text: "Add your items"
+    }
     ]
 });
 
