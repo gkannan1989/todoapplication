@@ -6,12 +6,12 @@
   "dependencies": {
     "@material-ui/core": "latest",
     "@material-ui/icons": "latest",
-    "@material-ui/styles": "^4.6.0",
-    "enzyme": "3.8.0",
-    "enzyme-adapter-react-16": "1.9.1",
-    "react": "16.8.0",
-    "react-dom": "16.8.0",
-    "react-scripts": "2.0.3"
+    "@material-ui/styles": "latest",
+    "enzyme": "latest",
+    "enzyme-adapter-react-16": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-scripts": "latest"
   }, 
   "devDependencies": {},
   "scripts": {

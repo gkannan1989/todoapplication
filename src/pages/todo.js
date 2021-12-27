@@ -1,5 +1,6 @@
 import React, { memo, useContext, useState, Suspense, lazy } from "react";   
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/es/styles';
+import { MuiThemeProvider } from '@material-ui/core/es/styles';
+import { createTheme } from '@material-ui/core/styles'
 import Store from '../store/context' 
 import { Constants as C } from '../constants/constants' 
 import { TodoHelper as H } from '../util/utils'; 
@@ -16,7 +17,7 @@ const onTodoClick = (initialValue = false) => {
   };
 };
 
-const customTheme = createMuiTheme({
+const customTheme = createTheme({
   typography: {
    "fontFamily": C.DEFAULT_THEME_FONT 
   }
@@ -49,7 +50,7 @@ const TodoApp = memo(() => {
     notify({"type": C.WARNING, "msg": C.TODO_REMOVED_MESSAGE}) 
   }
 
-  const markTodo = (idx) => {  
+  const markTodo = (idx) => {
     /**dispatch completed/mark event along with the index*/
     dispatch({ type: C.COMPLETE, payload: idx });
     /**trigger notification to the end user*/

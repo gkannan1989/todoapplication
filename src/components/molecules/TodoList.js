@@ -2,9 +2,9 @@ import React, { memo } from "react";
 import PropTypes from 'prop-types';
 import { List, Paper } from "@material-ui/core";
 import TodoListItem from "./TodoListItem";
-import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
-import GridListTileBar from '@material-ui/core/GridListTileBar';
+import ImageList from '@material-ui/core/ImageList';
+import ImageListItem from '@material-ui/core/ImageListItem';
+import ImageListItemBar from '@material-ui/core/ImageListItemBar';
 /**
  * Function represents the TodoList component
  * @memberOf components.TodoList
@@ -22,16 +22,16 @@ import GridListTileBar from '@material-ui/core/GridListTileBar';
  */
 const TodoList = memo(props => (
   <>
-   <GridList cellHeight={180} >
-         <GridListTile cols={2} rows={1}>
-            <GridListTileBar
+   <ImageList rowHeight={180} >
+         <ImageListItem cols={2} rows={1}>
+            <ImageListItemBar
               title={props.banner && props.banner.title}
               subtitle={props.banner && props.banner.subTitle}
-              titlePosition="bottom" 
+              position="bottom" 
               actionPosition="left" 
             />
-          </GridListTile> 
-    </GridList>  
+          </ImageListItem> 
+    </ImageList>  
     
     {props.items && props.items.length > 0 && (
       <Paper style={{ margin: 16 }}>

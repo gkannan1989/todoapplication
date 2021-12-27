@@ -47,20 +47,24 @@ const GreenCheckbox = withStyles({
  */
 const TodoListItem = memo((props) => {
   const [show, showIcon] = useState(false); 
+  const markItem = () => {
+    props.onCheckBoxToggle();
+  }
   return (
-    <ListItem className={'listItem'} divider={props.divider} button >
+    <ListItem onClick={() => markItem()} className={'listItem'} divider={props.divider} button >
        <FormControlLabel
+          onClick={() => markItem()} 
           className={'greenCheckBox'}
           control={
             <GreenCheckbox 
               checked={props.checked}  
-              onClick={props.onCheckBoxToggle}
+              onClick={() => markItem()} 
             />
           } 
         /> 
       <ListItemText className={props.checked ? 'strikeThrough' : ''} primary={props.text} onMouseLeave={() => showIcon(false)} onMouseEnter={() => showIcon(true)} />
       {
-        show ? (<IconButton  onMouseEnter={() => showIcon(true)} onMouseLeave={() => showIcon(false)}  color='primary' aria-label="Delete Todo" onClick={props.onButtonClick} >
+        true ? (<IconButton  onMouseEnter={() => showIcon(true)} onMouseLeave={() => showIcon(false)}  color='primary' aria-label="Delete Todo" onClick={props.onButtonClick} >
           <SvgIcon viewBox="0 0 21 23">
             <path d={C.TRASH_SVG_PATH}/>
             </SvgIcon>
