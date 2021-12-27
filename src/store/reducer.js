@@ -9,6 +9,16 @@ export default function reducer(state, action) {
         ...state,
         todos: [...state.todos, {text, checked: false}]
       };
+    case "UPDATE_TODO": 
+    return {
+      ...state,
+      todos: state.todos.map((todo, index) => {
+        if (action.payload.idx == index) {
+          todo.text = action.payload.text;
+        }
+        return todo;
+      })
+    };
     case "COMPLETE": 
       return {
         ...state,

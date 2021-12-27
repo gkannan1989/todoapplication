@@ -43,6 +43,10 @@ const TodoApp = memo(() => {
     setTodo(e && e.target && e.target.value);
   }
 
+  const handleUpdateTodo = (idx, text) => {
+    dispatch({ type: C.UPDATE_TODO, payload: {idx, text} });
+  }
+
   const removeTodo = (idx) => { 
     /**dispatch delete event along with the index*/
     dispatch({ type: C.DELETE, payload: idx });
@@ -94,6 +98,7 @@ const TodoApp = memo(() => {
               items={state && state.todos}
               onItemMark={idx => markTodo(idx)}
               onItemRemove={idx => removeTodo(idx)} 
+              handleUpdateTodo={handleUpdateTodo}
               banner={C.BANNER_OBJ}
             />
             <AddTodo

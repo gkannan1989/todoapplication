@@ -83,6 +83,9 @@ body {
   margin: 16px;
   padding: 16px; 
 }
+.MuiSvgIcon-colorPrimary {
+  color: #0b29d2f7 !important;
+}
 .addToDo > div.MuiGrid-container > div.MuiGrid-item {
   background-color:#ffff
 }
@@ -186,7 +189,7 @@ ul.MuiGridList-root {
     min-height: auto;
   }
   .MuiListItem-gutters {
-    padding-left: 1.4em !important;
-    padding-right: 1em !important;
+    padding-left: 1.1em !important;
+    padding-right: 0.1em !important;
   }
 }

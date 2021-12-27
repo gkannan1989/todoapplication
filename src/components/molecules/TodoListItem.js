@@ -3,15 +3,19 @@ import {
   ListItem,
   Checkbox,
   IconButton,
-  ListItemText 
+  ListItemText,
+  TextField
 } from "@material-ui/core";
 import PropTypes from 'prop-types'; 
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import { withStyles } from '@material-ui/core/styles'; 
 import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
 import CheckBoxIcon from '@material-ui/icons/CheckBox';
+import EditIcon from '@material-ui/icons/Edit';
+import DoneIcon from '@material-ui/icons/Done';
 import SvgIcon from '@material-ui/core/SvgIcon';
 import { Constants as C } from '../../constants/constants'
+import { TodoHelper } from '../../util/utils'
 /**
  * 
  */
@@ -47,9 +51,26 @@ const GreenCheckbox = withStyles({
  */
 const TodoListItem = memo((props) => {
   const [show, showIcon] = useState(false); 
+  const [edit, showEdit] = useState(true); 
+  const [input, setInput] = useState(props.text); 
   const markItem = () => {
     props.onCheckBoxToggle();
   }
+  const updateInput = (value) => {
+    setInput(value)
+    props.handleUpdateTodo(props.idx, value);
+    showEdit(!edit)
+  }
+
+  const handleKeyPressEvent = (ev) => {
+    /**handle keypress event based on the keyboard key */
+    if(TodoHelper.handleKeyPress(ev)) {
+      updateInput(input)
+    } else {
+      return false
+    }
+  }
+
   return (
     <>
     <ListItem className={'listItem'} divider={props.divider} >
@@ -61,11 +82,24 @@ const TodoListItem = memo((props) => {
               onClick={() => markItem()} 
             />
           } 
-        /> 
-      <ListItemText onClick={() => markItem()}  className={props.checked ? 'strikeThrough' : ''} primary={props.text} onMouseLeave={() => showIcon(false)} onMouseEnter={() => showIcon(true)} />
+        />
+        {!edit ? 
+         
+         <TextField
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          onKeyPress={(e) => handleKeyPressEvent(e)}
+          fullWidth
+        /> :
+          <ListItemText onClick={() => markItem()}  className={props.checked ? 'strikeThrough' : ''} primary={props.text} onMouseLeave={() => showIcon(false)} onMouseEnter={() => showIcon(true)} />
+        }
+      {edit ? 
+        <EditIcon onClick={() => showEdit(!edit)} color="primary" /> :
+        <DoneIcon onClick={() => updateInput(input)} color="primary" /> 
+      }
       <IconButton  onMouseEnter={() => showIcon(true)} onMouseLeave={() => showIcon(false)}  color='primary' aria-label="Delete Todo" onClick={props.onButtonClick} >
-      <SvgIcon viewBox="0 0 21 23">
-        <path d={C.TRASH_SVG_PATH}/>
+        <SvgIcon viewBox="0 0 21 23">
+          <path d={C.TRASH_SVG_PATH}/>
         </SvgIcon>
     </IconButton>
     </ListItem>

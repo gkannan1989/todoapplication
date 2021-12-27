@@ -2,7 +2,8 @@
 export const Constants = {
     DELETE : "DELETE",
     COMPLETE: "COMPLETE",
-    ADD_TODO : "ADD_TODO",   
+    ADD_TODO : "ADD_TODO",
+    UPDATE_TODO: "UPDATE_TODO",   
     ADD_TODO_BTN: "Add a to-do",
     TODO_PLACEHOLDER: "Add Todo here",
     ADD_BTN_TEXT: "Add",
