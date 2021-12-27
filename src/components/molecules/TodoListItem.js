@@ -51,26 +51,26 @@ const TodoListItem = memo((props) => {
     props.onCheckBoxToggle();
   }
   return (
-    <ListItem onClick={() => markItem()} className={'listItem'} divider={props.divider} button >
+    <>
+    <ListItem className={'listItem'} divider={props.divider} >
        <FormControlLabel
-          onClick={() => markItem()} 
           className={'greenCheckBox'}
           control={
             <GreenCheckbox 
-              checked={props.checked}  
+              checked={props.checked}
               onClick={() => markItem()} 
             />
           } 
         /> 
-      <ListItemText className={props.checked ? 'strikeThrough' : ''} primary={props.text} onMouseLeave={() => showIcon(false)} onMouseEnter={() => showIcon(true)} />
-      {
-        true ? (<IconButton  onMouseEnter={() => showIcon(true)} onMouseLeave={() => showIcon(false)}  color='primary' aria-label="Delete Todo" onClick={props.onButtonClick} >
-          <SvgIcon viewBox="0 0 21 23">
-            <path d={C.TRASH_SVG_PATH}/>
-            </SvgIcon>
-        </IconButton>) : ''
-      }    
+      <ListItemText onClick={() => markItem()}  className={props.checked ? 'strikeThrough' : ''} primary={props.text} onMouseLeave={() => showIcon(false)} onMouseEnter={() => showIcon(true)} />
+      <IconButton  onMouseEnter={() => showIcon(true)} onMouseLeave={() => showIcon(false)}  color='primary' aria-label="Delete Todo" onClick={props.onButtonClick} >
+      <SvgIcon viewBox="0 0 21 23">
+        <path d={C.TRASH_SVG_PATH}/>
+        </SvgIcon>
+    </IconButton>
     </ListItem>
+    
+  </>
   ) 
 });
 /**
