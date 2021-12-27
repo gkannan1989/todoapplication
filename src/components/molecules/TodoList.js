@@ -35,7 +35,7 @@ const TodoList = memo(props => {
      </ImageList>  
      
      {items && items.length > 0 && (
-       <Paper style={{ margin: 16, maxHeight: 400, overflow: 'auto' }}>
+       <Paper style={{ margin: 16, maxHeight: '600px', overflow: 'auto' }}>
          <List style={{ overflow: "none" }}>
            {items.map((todo, idx) => (
              <TodoListItem

@@ -1,10 +1,13 @@
 import React, { memo } from "react";
 import {TextField, Paper, Grid, Typography } from "@material-ui/core"; 
 import Button from '@material-ui/core/Button';
+import Box from '@material-ui/core/Box';
 import PropTypes from 'prop-types';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import { Constants as C } from  '../../constants/constants';
+import BottomNavigation from '@material-ui/core/BottomNavigation';
+import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 /**
  * Function represents the AddTodo component
  * @memberOf components.AddTodo
@@ -27,12 +30,16 @@ const AddTodo = memo(props => (
   <> 
   {
     !props.isOpen ? 
-      <Typography onClick={props.openTodo} className='addToDoBtn' color="inherit">
-        <Fab size="small"  color="primary" aria-label="add">
-          <AddIcon />   
-        </Fab>
-        <Button color="primary">{C.ADD_TODO_BTN}</Button> 
-      </Typography> : 
+    <Box >
+      <BottomNavigation>
+        <BottomNavigationAction icon={
+        <Button 
+          fullWidth
+          variant="contained"
+          onClick={props.openTodo} color="primary">{C.ADD_TODO_BTN}</Button>} />
+      </BottomNavigation>
+    </Box>
+      : 
          ( <Paper className="addToDo"> 
             <Grid container> 
               <Grid  className="grid" xs={10} md={11} item>

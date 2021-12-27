@@ -47,6 +47,9 @@ body {
   line-height: 2 !important;
   font-family: 'Fira-Sans-ExtraLight'; 
 }
+.MuiBottomNavigationAction-root {
+  max-width: 100% !important;
+}
 .MuiImageListItemBar-subtitle {
   font-size: 1rem !important;
 }
