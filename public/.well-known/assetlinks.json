@@ -1,0 +1,10 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "app.netlify.home_todo_tracker.twa",
+    "site": "https://home-todo-tracker.netlify.app/",
+    "sha256_cert_fingerprints":
+      ["72:EB:34:61:FC:04:7D:76:ED:7A:B6:A8:F3:DA:85:9D:66:97:36:5C:32:A0:57:4C:9E:B2:1B:EA:DC:24:EC:F5"]
+   }
+}]
