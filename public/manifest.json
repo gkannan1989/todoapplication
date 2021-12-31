@@ -3,9 +3,10 @@
   "short_name": "Todo",
   "theme_color": "#FFFFFF",
   "background_color": "#FFFFFF",
-  "display": "standalone",
+  "display": "fullscreen",
   "scope": "/",
-  "start_url": "/index.html",
+  "start_url": "/",
+  "prefer_related_applications": false,
   "icons": [
     {
       "src": "icon-72x72.png",
